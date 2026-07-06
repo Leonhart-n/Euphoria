@@ -1,6 +1,6 @@
 local function loadUI()
     local success, errorMessage = pcall(function()
-        local url = "https://raw.githubusercontent.com/username/repo/main/ui_background.luau"
+        local url = "https://raw.githubusercontent.com/Leonhart-n/Euphoria/refs/heads/main/Library/ui_background.luau"
         local scriptSource = game:HttpGet(url)
         loadstring(scriptSource)()
     end)
