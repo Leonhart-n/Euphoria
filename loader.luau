@@ -1,14 +1,13 @@
--- Load the UI script
 local function loadUI()
     local success, errorMessage = pcall(function()
-        local uiScript = game:GetService("InsertService"):LoadLocalAsset("ui_background.luau")
-        uiScript.Parent = game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui")
+        local url = "https://raw.githubusercontent.com/username/repo/main/ui_background.luau"
+        local scriptSource = game:HttpGet(url)
+        loadstring(scriptSource)()
     end)
 
     if not success then
-        warn("Failed to load UI: " .. errorMessage)
+        warn("Failed to load UI: " .. tostring(errorMessage))
     end
 end
 
--- Execute the function to load the UI
 loadUI()
